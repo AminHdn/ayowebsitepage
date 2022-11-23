@@ -1,0 +1,90 @@
+@use '@angular/material' as mat;
+
+@import "~@angular/material/theming";
+
+@include mat.core();
+
+$angular-primary: mat.define-palette(mat.$teal-palette, 500, 100, 900);
+$angular-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$angular-warn: mat.define-palette(mat.$red-palette);
+
+$angular-default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $angular-primary,
+      accent: $angular-accent,
+      warn: $angular-warn,
+    ),
+  )
+);
+@include mat.all-component-themes($angular-default-theme);
+
+$angular-primary-dark: mat.define-palette(mat.$blue-palette, 500, 100, 900);
+$angular-accent-dark: mat.define-palette(mat.$green-palette, A200, A100, A400);
+
+$angular-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $angular-primary-dark,
+      accent: $angular-accent-dark,
+      warn: $angular-warn,
+    ),
+  )
+);
+
+
+.darkMode {
+  @include mat.all-component-colors($angular-dark-theme);
+}
+
+/* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+$duskycitron:#E3CD81FF;
+$coolgray:#B1B3B3FF;
+
+.toolbar{
+    background-color: #949398FF;
+    height: 70px;
+}
+$toocolor:gold;
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto',sans-serif;
+    
+
+}
+// app-main-nav{
+//   padding: 0;
+//   display: flex;
+//   flex-direction: column;
+//   min-height: 99vh;
+//   border: 1px solid red;
+ 
+// }
+// router-outlet{
+//   // min-height: 100vh;
+// }
+.footer{
+  margin-top: auto;
+  
+  bottom: 0;
+}
+
+
+
+.flexspacer{
+    margin-left: 35px;
+}
+.fullflexspacer{
+   
+    flex: 1 1 auto;
+
+    
+}
+.fontfa{
+    font: bold;
+}
+

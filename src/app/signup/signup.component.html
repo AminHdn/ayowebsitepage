@@ -1,0 +1,58 @@
+<div class="container"  >
+    <div   fxFlex="100" fxLayoutAlign="center"  >
+        
+            
+            <form novalidate [formGroup]="signupForm" #fform="ngForm"  fxFlex="80" (ngSubmit)="onSubmit()"  >
+                <h2 fxLayoutAlign="center"> عضویت در سایت</h2>
+                <p fxLayoutAlign="center" fxLayout="column">
+                    <mat-form-field>
+                        <input matInput formControlName="name" placeholder="نام کاربری" type="text"  >
+                        <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
+                    </mat-form-field>
+                    
+                
+                    <mat-form-field>
+                        <input matInput formControlName="password" placeholder="رمزعبور" type="text" >
+                        <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
+                    </mat-form-field>
+                    
+                    
+               
+                <mat-form-field>
+                    <input matInput formControlName="passwordconfirm" placeholder="تکرار رمز عبور" type="text">
+                    <mat-error *ngIf="formErrors.passwordconfirm ">{{formErrors.passwordconfirm}}</mat-error>
+                    <!-- <div *ngIf="   .confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div> -->
+                
+                    
+                </mat-form-field>
+                    
+                    
+              
+                <mat-form-field>
+                    <input matInput formControlName="email" placeholder="ایمیل شما" type="email" >
+                    <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+
+                </mat-form-field>
+                    
+                   
+               <mat-form-field>
+                <input matInput formControlName="phonenumber" placeholder="شماره موبایل" type="text" pattern="[0-9]*" >
+                <mat-error *ngIf="formErrors.phonenumber">{{formErrors.phonenumber}}</mat-error>
+               </mat-form-field>
+                 
+                    
+                   
+                </p>
+                <div fxLayoutAlign="center" fxLayout="column" >
+                    <button mat-raised-button [disabled]="signupForm.invalid">عضویت در سایت</button>
+                    <h2 fxLayoutAlign="center">یا</h2>
+                    <button mat-raised-button >ورود به سایت</button>
+                </div>
+                
+    
+            </form>
+        
+        
+    </div>
+
+</div>

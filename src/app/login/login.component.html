@@ -1,0 +1,35 @@
+<div fxLayout="column" class="containerlogin" dir="rtl" fxFlexAlign="center" fxFill="100%" >
+    <mat-toolbar class="toolbar">
+       ورود به سایت
+        <span class="fullflexspacer"></span>
+        <button mat-button mat-dialog-close>&times;</button>
+    </mat-toolbar>
+       <form novalidate [formGroup]="loginForm"  class="formlogin" (submit)="onSubmit()" >
+            <mat-dialog-content class="formlogin" >
+            <p>
+                <mat-form-field class="inputborder">
+                    <mat-label >نام کاربری<fa-icon [icon]="fuser"></fa-icon> </mat-label>
+                    <input matInput placeholder="نام کاربری" class="inputl" formControlName="username"  type="text" name="username" required >
+                    <mat-error *ngIf="formErrors.username">{{formErrors.username}}</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field class="inputborder">
+                    
+                    <input matInput formControlName="password" class="inputl" placeholder="رمز عبور" type="text"  required>
+                    <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
+                </mat-form-field>
+            </p>
+        </mat-dialog-content>
+        <mat-dialog-actions class="loginbtn">
+            
+            <button mat-button  type="submit" class="btnl" [disabled]="loginForm.invalid" >ورود</button>
+            <mat-error *ngIf="login==false"> <div >رمز عبور یا نام کاربری اشتباه است</div></mat-error>
+        </mat-dialog-actions>
+        
+    
+        </form>
+       
+
+</div>
+

@@ -1,0 +1,20 @@
+<div>
+    <div>
+        <label for="movie">Search:</label>
+    </div>
+        <div>
+            <input id="movie" #movieSearchInput placeholder="Search Movie By Name" type="text" autocomplete="off">
+        </div>
+        <div [hidden]="!showSearches">
+            <div>
+                <div *ngFor="let movie of searchedMovies; trackBy:trackById" tappable (click)="setmovieName(movie)" >
+                    <a  [routerLink]="['/movie',movie.id]" >{{movie}}</a>
+                </div>
+            </div>
+            <p *ngIf="searchedMovies && searchedMovies.length<=0 && !isSearching"> No Movie found</p>
+            <p [hidden]="!isSearching"> Searching cars...</p>
+        </div>
+    
+</div>
+
+

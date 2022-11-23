@@ -1,0 +1,16 @@
+<form >
+    <mat-form-field  appearance="fill">
+      <mat-label>جستجو</mat-label>
+      <input type="text"
+             placeholder=جستجو...
+             aria-label="فیلم"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name" >
+            <a [routerLink]="['/movie',option.id]" > {{option.name}} </a>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>

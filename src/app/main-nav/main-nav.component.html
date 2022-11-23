@@ -1,0 +1,106 @@
+<div >
+  <mat-sidenav-container class="sidenav-container mat-app-background" [ngClass]="{'darkMode':isDarkTheme}">
+    <mat-sidenav #drawer class="sidenav" 
+        [ngClass]="{hidden:!(isHandset$ | async)}"
+        fixedInViewport="false"
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list fxLayout="column" class="navlist">
+        <a mat-button routerLink="/home">خانه </a>
+        <a mat-button>فیلم</a>
+        <a mat-button>سریال</a>
+        <a  mat-button routerLink="/contact">تماس با ما</a>
+       
+        
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      
+      <mat-toolbar color="primary">
+        
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        
+        <div *ngIf="!login">
+          <a mat-button (click)="openLoginForm()" >ورورد</a>
+          <span >/</span>
+          <a mat-button class="fontfa" routerLink="/signup" >ثبت نام</a>
+        </div>
+        <div *ngIf="login">
+          <!--  -->
+          <button mat-button [mat-menu-trigger-for]="menu">خوش آمدید {{match.name}}<mat-icon>account_circle</mat-icon></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="'/dashbord'">داشبورد</button>
+            <button mat-menu-item (click)="Out()" [routerLink]="'/home'">خروج</button>
+          </mat-menu>
+  
+  
+        </div>
+          
+          
+      
+          <span class="flexspacer"></span>
+          <a fxHide.lt-md="true"  mat-button>خرید اشتراک</a>
+          
+          
+          <mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before" (change)="storeThemeSelection()" labelPosition="after">
+            <fa-icon [icon]="famoon"></fa-icon>
+          </mat-slide-toggle>
+          <button class="mag" (click)="searchVisible()"  ><fa-icon [icon]="famag"  size="lg" ></fa-icon></button>
+          
+          <span class="fullflexspacer"></span>
+          <!-- <div class="header">
+           <div class="dropdown">
+            <button class="link">Information</button>
+              <div class="dropdown-menu">
+                DropDown Content
+              </div>
+           </div> 
+          </div>
+       -->
+          <div fxLayout fxLayoutGap="20px" fxHide.lt-md="true" >
+  
+              <ul fxLayout="row" class="ulmenu">
+                <li><a mat-button routerLink="/contact" >تماس با ما</a></li>
+                <li class="singleDro" appDropdown><a mat-button>فیلم</a>
+                <ul >
+                  <li *ngFor="let g of gen;index as i;"><a class="dlink" href="#">{{g.genre}}</a></li>
+                </ul>
+              </li>
+                
+                <li class="singleDro"
+                
+                  [class.open]="isDropdownOpen"
+                  (mouseover)="openDropDown($event)" 
+                  (mouseleave)="closeDropDown($event)"
+                ><a mat-button>سریال</a> 
+                  <ul >
+                    <li *ngFor="let g of gen;index as i;"><a class="dlink" href="#">{{g.genre}}</a></li>
+                  </ul>
+                
+                </li>
+  
+                <li><a mat-button routerLink="/home">خانه</a></li>
+              </ul>
+          
+          </div>
+      
+          <a mat-button class="flexspacer" routerLink="/home"><img src="./assets/images/download.png" alt="logo"  height="45px"></a>
+          
+      </mat-toolbar>
+      <app-search [searchopen]="searchopen"></app-search>
+      <ng-content></ng-content>
+      <!-- Add Content Here -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+
+</div>

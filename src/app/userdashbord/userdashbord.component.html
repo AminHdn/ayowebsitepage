@@ -1,0 +1,99 @@
+<!-- <div>
+    <div>
+        <mat-list dir="rtl">
+            <mat-list-item>نام: {{match.name}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>ایمیل: {{match.email}}</mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>شماره:{{match.phonenumber}}</mat-list-item>
+          </mat-list>
+          <button mat-raised-button>تغییر پسورد</button>
+        
+    </div>
+</div> -->
+
+<div class="container" fxFlex="100" >
+    <div    fxLayout="row"   >
+       
+          <div fxFlex="70" class="form"  fxLayoutAlign="center">
+            <form novalidate [formGroup]="editsignupForm" #fform="ngForm"  fxFlex="60" (ngSubmit)="onSubmit()"  dir="rtl" >
+                <h2 fxLayoutAlign="center"> ویرایش اطلاعات</h2>
+                <p fxLayoutAlign="center" fxLayout="column">
+                    <mat-form-field>
+                        <input matInput formControlName="name"  placeholder="نام نمایشی" type="text" dir="ltr" >
+                        <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
+                    </mat-form-field>
+                    
+                
+                    <mat-form-field>
+                        <input matInput formControlName="password" placeholder="رمزعبور" type="password" dir="ltr" >
+                        <mat-error *ngIf="formErrors.password">{{formErrors.password}}</mat-error>
+                    </mat-form-field>
+                    
+                    
+               
+                <mat-form-field>
+                    <input matInput formControlName="passwordconfirm" placeholder="تکرار رمز عبور" type="password" dir="ltr">
+                    <mat-error *ngIf="formErrors.passwordconfirm ">{{formErrors.passwordconfirm}}</mat-error>
+                    <!-- <div *ngIf="   .confirm_password.errors.confirmedValidator">Password and Confirm Password must be match.</div> -->
+                
+                    
+                </mat-form-field>
+                    
+                    
+              
+                <mat-form-field>
+                    <input matInput formControlName="email" placeholder="ایمیل " type="email" dir="ltr"  >
+                    <mat-error *ngIf="formErrors.email">{{formErrors.email}}</mat-error>
+
+                </mat-form-field>
+                    
+                   
+               <mat-form-field>
+                <input matInput formControlName="phonenumber" placeholder="شماره موبایل" type="text" pattern="[0-9]*" dir="ltr">
+                <mat-error *ngIf="formErrors.phonenumber">{{formErrors.phonenumber}}</mat-error>
+               </mat-form-field>
+                 
+                    
+                   
+                </p>
+                <div fxLayoutAlign="center" fxLayout="column" >
+                    <button mat-raised-button [disabled]="editsignupForm.invalid">ویرایش اطلاعات</button>
+                </div>
+                
+    
+            </form>
+          </div>
+          <span class="fullflexspacer"></span>
+          <div  fxHide.lt-sm="true" style=" box-shadow: 0 8px 16px #dce1e1;" >
+  
+            <mat-sidenav-container class="sidebar" >
+              <section>
+                <!-- <div *ngFor = "let seri of series" >
+                  <div *ngIf="seri.side===true" class="sideitem">
+                    <a [routerLink]="['/movie',seri.id]"><img    src="{{seri.sideimages}}" alt="{{seri.name}}">
+                    <h3>{{seri.sidedescription}}</h3></a>
+                  </div>
+                  
+                </div> -->
+                <div class="sideitem" >
+                  
+                  
+                
+                
+              </div>
+                
+          
+              </section>
+              
+            </mat-sidenav-container>
+           
+           
+          </div>
+            
+           
+        
+        
+    </div>
+
+</div>

@@ -1,0 +1,26 @@
+<div fxFill="29" fxHide.lt-sm="true" style=" box-shadow: 0 8px 16px #dce1e1;" >
+  
+  <mat-sidenav-container class="sidebar" >
+    <section>
+      <!-- <div *ngFor = "let seri of series" >
+        <div *ngIf="seri.side===true" class="sideitem">
+          <a [routerLink]="['/movie',seri.id]"><img    src="{{seri.sideimages}}" alt="{{seri.name}}">
+          <h3>{{seri.sidedescription}}</h3></a>
+        </div>
+        
+      </div> -->
+      <div *ngFor = "let seri of sideseries" class="sideitem" >
+        
+        <a [routerLink]="['/movie',seri.id]"><img    src="{{seri.sideimages}}" alt="{{seri.name}}">
+        <h3>{{seri.sidedescription}}</h3></a>
+      
+      
+    </div>
+      
+
+    </section>
+    
+  </mat-sidenav-container>
+ 
+ 
+</div>

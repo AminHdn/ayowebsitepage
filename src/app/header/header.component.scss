@@ -1,0 +1,18 @@
+mat-sidenav-container{
+    width: 20%;
+    height: auto;
+    min-height: 93vh !important;
+    border: 1px solid;
+}
+
+mat-sidenav{
+    width: 100%;
+    min-height: 93vh !important;
+    border: 1px solid;
+}
+mat-sidenav a{
+    border-bottom: 1px solid gray;
+}
+mat-sidenav a:hover{
+    background-color: burlywood;
+}

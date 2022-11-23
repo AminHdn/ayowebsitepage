@@ -1,0 +1,25 @@
+<!-- <div  [ngClass]="{vis : searchopen}">
+    <input type="text"  placeholder="search Here" [(ngModel)]="searchTerm" (change)="search() ">
+    <button (click)="search()">Search</button>
+</div> -->
+
+
+<form [ngClass]="{vis : searchopen}" >
+    <mat-form-field   class="formfild" >
+      <mat-label class="label">جستجو</mat-label>
+      <div fxLayout="row">
+      <input  type="text"
+             aria-label="فیلم"
+             [(ngModel)]="searchTerm" (change)="search()" 
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+             <button (click)="search()">Search</button>
+            </div>
+      <mat-autocomplete #auto="matAutocomplete" >
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.name" >
+            <a (click)="searchOne(option.id)" [routerLink]="option.id"  > {{option.name}}  </a>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>

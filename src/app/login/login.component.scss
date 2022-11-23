@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #B1B3B3FF;
+}
+.containerlogin{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #B1B3B3FF;
+    border-radius: 3%;
+
+}
+.toolbar{
+    margin: 0;
+    padding: 0;
+    border-radius: 24% 24% 0 0;
+    
+    
+}
+.formlogin{
+    position: relative;
+    right: 0;
+    left: 0;
+    display: block;
+    
+    text-align: center;
+    
+    
+}
+.loginbtn{
+    position: relative;
+    justify-content: center;
+   
+
+}
+.btnl{
+    border-radius: 15%;
+    border: 2px solid white;
+   background-color:#E3CD81FF;
+   width: 80%;
+   font-size: 35px;
+   height: auto;
+}
+.inputl:hover{
+    border: 1px solid #B1B3B3FF;
+    border-radius: 5%;
+    height: auto;
+}

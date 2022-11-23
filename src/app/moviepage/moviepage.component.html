@@ -1,0 +1,62 @@
+<div class="diva" fxLayout="column" fxFlexAlign="center"  fxFlex="100">
+    <div  fxLayout="column"   fxFlexAlign="center" fxFlex="50"   class="con"   fxLayout.lt-md="column"  fxLayout='20px'>
+
+        <div *ngIf="movies"  fxLayout="row"  dir="rtl">
+        <img  src="{{movies.images}}" alt="{{movies.name}}" style="width: 250px;">
+        <div fxLayout="column"   class="moviecontex"   >
+            <div fxLayout="row">
+                <h3 matLine>نام فیلم:{{movies.name}}</h3>
+                <span class="fullflexspacer"></span>
+                <h2>Rate:{{movies.rating}}/<small>10</small></h2><br>
+            </div>
+            
+            <h4 matLine>کارگردان:{{movies.director}}</h4>
+            <h4 matLine>ژانر:{{movies.Genre}}</h4>
+        <div >
+            {{movies.desceribe}}
+        </div>
+        <button mat-raised-button  [routerLink]="['/movie',movies.id]" class="morebtn">لینک دانلود</button>
+        </div>
+        
+        </div>
+        
+    
+        <div fxLayout="row"  *ngIf="series" dir="rtl">
+            
+        <img  src="{{series.images}}" alt="{{series.name}}" style="width: 250px;">
+    
+        <div fxLayout="column"   class="moviecontex"  >
+            <div fxLayout="row">
+                <h3 matLine>نام فیلم:{{series.name}}</h3>
+                <span class="fullflexspacer"></span>
+                <h2>Rate:{{series.rating}}/<small>10</small></h2><br>
+            </div>
+            
+            <h4 matLine>کارگردان:{{series.director}}</h4>
+            <h4 matLine>ژانر:{{series.Genre}}</h4>
+        <div >
+            {{series.desceribe}}
+        </div>
+        <button mat-raised-button  [routerLink]="['/movie',movies.id]" class="morebtn">لینک دانلود</button>
+        </div>
+        
+    </div>
+    </div>
+    <div dir="rtl" >
+        
+        <mat-list class="comment-con">
+            <div fxLayout="row" style="margin: 10px;">
+                <h2>نظرات کاربران</h2>
+                <span class="fullflexspacer"></span>
+                <h3>تعداد نظرات:</h3>
+            </div>
+            
+            <mat-list-item class="comment">
+
+            </mat-list-item>
+        </mat-list>
+    </div>
+    
+    
+
+</div>

@@ -1,0 +1,132 @@
+<div fxLayout="column"  >
+
+    <app-carousel [images]="images" [autoslide]="true" [@expand]></app-carousel>
+    <div fxLayout="row" fxLayoutGap.gt-sm="20px" ngStyle.gt-sm="margin-left: 4%; " style="margin-top: 1%; margin-bottom: 1%;" fxLayout.lt-sm="column" [@flyInOut]   >
+        <div fxLayout="column"  fxLayoutGap.lt-sm="20px" style="margin-bottom:1%">
+
+            <div *ngIf="movies" fxLayout.lt-md="column"  fxFlex="70"  fxLayoutGap.lt-sm="20px"  >
+        
+                <div *ngFor="let movie of movies"   class="moviebox"  fxLayoutGap.lt-sm="20px"  >
+                  
+                <div       dir="rtl" fxLayout="row"  fxLayout.lt-sm="column"    fxLayoutGap.lt-sm="70px"    >
+                    
+                        <div  fxFlex="210px">
+                            <a  [routerLink]="['/movie',movie.id]" ><img  src="{{movie.images}}" alt="{{movie.name}}" style="width: 200px;"></a>
+                                
+                            </div>
+                            <div fxLayout="column" fxFlex="100"   class="moviecontex"  >
+                                <div fxLayout="row" >
+                                    <a [routerLink]="['/movie',movie.id]" ><h3 matLine>نام فیلم:{{movie.name}}</h3></a>
+                                    <span class="fullflexspacer"></span>
+                                    <h2>Rate:{{movie.rating}}/<small>10</small></h2>
+                                    
+                                </div>
+                                <div><h4 matLine>کارگردان:{{movie.director}}</h4></div>
+        
+                            <div >
+                                
+                                {{movie.desceribe}}
+                            </div>
+                            
+                            
+                          
+                            </div>
+                            
+                    </div>
+                   
+                    
+                    
+                   
+                    <button mat-raised-button  [routerLink]="['/movie',movie.id]" class="morebtn">ادامه مطلب</button>
+        
+                
+                
+                </div>
+
+
+
+
+
+        </div>
+        
+            <div *ngIf="series"fxLayout.lt-md="column" fxFlex="70" style="margin-top: 4.5%;"   >
+        
+                <div *ngFor="let movie of series"   class="moviebox"  fxLayoutGap.lt-sm="20px" >
+                  
+                <div       dir="rtl"  fxLayout.lt-md="column"    fxLayout="row"  fxLayoutGap.lt-sm="65px"     >
+                    
+                        <div  fxFlex="210px">
+                            <a  [routerLink]="['/movie',movie.id]" ><img  src="{{movie.images}}" alt="{{movie.name}}" style="width: 200px;"></a>
+                                
+                            </div>
+                            <div fxLayout="column" fxFlex="100"  class="moviecontex"  >
+                                <div fxLayout="row" >
+                                    <a [routerLink]="['/movie',movie.id]" ><h3 matLine>نام فیلم:{{movie.name}}</h3></a>
+                                    <span class="fullflexspacer"></span>
+                                    <h2>Rate:{{movie.rating}}/<small>10</small></h2>
+                                    
+                                </div>
+                                <div><h4 matLine>کارگردان:{{movie.director}}</h4></div>
+        
+                            <div >
+                                
+                                {{movie.desceribe}}
+                            </div>
+                            
+                            
+                          
+                            </div>
+                            
+                    </div>
+                   
+                    
+                    
+                   
+                    <button mat-raised-button  [routerLink]="['/movie',movie.id]" class="morebtn">ادامه مطلب</button>
+        
+                
+                
+                </div>
+                </div>
+        
+            
+                
+                
+                  
+                    <!-- <div  class="moviebox"    dir="rtl"  fxLayout.lt-md="column" *ngFor="let movie of series" >
+                        <div fxLayout="column" class="moviecontex">
+                            <a [routerLink]="['/movie',movie.id]" >  <img  src="{{movie.images}}" alt="{{movie.name}}" style="width: 200px;"></a>
+                            
+                        </div>
+                        <div fxLayout="column"   class="moviecontex">
+                            <div fxLayout="row">
+                                <a [routerLink]="['/movie',movie.id]" ><h3 matLine>نام فیلم:{{movie.name}}</h3></a>
+                                <span class="fullflexspacer"></span>
+                                <h2>Rate:{{movie.rating}}/<small>10</small></h2><br>
+                            </div>
+                            <h4 matLine>کارگردان:{{movie.director}}</h4>
+                        <div >
+                            {{movie.desceribe}}
+                        </div>
+                        <button mat-raised-button  [routerLink]="['/movie',movie.id]" class="morebtn">ادامه مطلب</button>
+                        </div>
+                        
+                        
+            
+                    </div> -->
+                    
+                </div>
+
+                
+        <span class="fullflexspacer"></span>
+        <div fxFlex="25" >
+            <app-sidebar ></app-sidebar>
+        </div>
+       
+
+    
+    
+    </div>
+    
+
+</div>
